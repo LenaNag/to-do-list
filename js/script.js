@@ -27,7 +27,7 @@
             <li class="tasks__item">
             <button class="js-done tasks__cheked">${task.done ? "✓" : ""}</button>
             <span${task.done ? " style=\"text-decoration: line-through\"" : ""}>${task.content}</span>
-            <button class="tasks__delete js-remove">🗑️</button>
+            <button class="tasks__delete js-remove">×</button>
             </li>`;
         }
         document.querySelector(".js-tasks").innerHTML = htmlString;
