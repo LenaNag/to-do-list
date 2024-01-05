@@ -1,6 +1,13 @@
 .tasks {
     padding: 10px 15px;
     list-style-type: none;
+    display: grid;
+}
+
+.tasks__item {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
 }
 
 .tasks__cheked {
@@ -8,7 +15,7 @@
     color: white;
     height: 25px;
     width: 25px;
-    margin-right: 10px;
+    margin: 10px;
 }
 
 .tasks__delete {
