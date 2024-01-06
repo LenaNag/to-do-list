@@ -25,9 +25,9 @@
         for (const task of tasks) {
             htmlString += `
             <li class="tasks__item">
-            <button class="js-done tasks__cheked">${task.done ? "✓" : ""}</button>
+            <button class="js-done tasks__button">${task.done ? "✓" : ""}</button>
             <span${task.done ? " class=\"tasks__item--done\"" : ""}>${task.content}</span>
-            <button class="tasks__delete js-remove">×</button>
+            <button class="tasks__button tasks__button--delete js-remove">×</button>
             </li>`;
         }
         document.querySelector(".js-tasks").innerHTML = htmlString;
