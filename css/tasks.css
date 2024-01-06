@@ -11,6 +11,10 @@
     border-bottom: 1px solid #ddd;
 }
 
+.tasks__item--done {
+    text-decoration: line-through;
+}
+
 .tasks__cheked {
     background: green;
     color: white;
