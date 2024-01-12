@@ -17,4 +17,4 @@ This aplication was created as a part of [YouCode](https://youcode.pl) course. I
 
 ## Demo version:
 
-https://lenanag.github.io/to_do_list/
+https://lenanag.github.io/to-do-list/
