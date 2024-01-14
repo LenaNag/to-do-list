@@ -16,14 +16,23 @@
 }
 
 .tasks__button {
-    background: green;
+    background: hsl(120, 100%, 25%);
     color: white;
     height: 25px;
     width: 25px;
     margin: 10px;
     border-style: none;
+    transition: 1s;
+}
+
+.tasks__button:hover {
+    background: hsl(120, 100%, 35%);
 }
 
 .tasks__button--delete {
-    background: red;
+    background: hsl(0, 100%, 50%);
+}
+
+.tasks__button--delete:hover {
+    background: hsl(0, 100%, 70%);
 }

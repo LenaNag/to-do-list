@@ -21,6 +21,7 @@
     border: none;
     background-color: teal;
     color: white;
+    transition: 1s;
 }
 
 .form__button:hover {
