@@ -18,8 +18,8 @@
 .tasks__button {
     background: hsl(120, 100%, 25%);
     color: white;
-    height: 25px;
-    width: 25px;
+    height: 30px;
+    width: 30px;
     margin: 10px;
     border-style: none;
     transition: 1s;
