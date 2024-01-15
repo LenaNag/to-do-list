@@ -63,14 +63,14 @@
     };
 
     const renderButtons = () => {
-        const buttonsElement = document.querySelector(".js-hideCompleteTasksButtons");
+        const buttonsElement = document.querySelector(".js-hideShowTasksButtons");
 
         if (tasks.length > 0) {
             buttonsElement.innerHTML = `
-            <button>
+            <button class="js-hideShowDoneTasks">
                 ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
             </button>
-            <button>
+            <button class="js-allTasksDone">
                 Ukończ wszystkie
             </button>
             `;
@@ -79,11 +79,33 @@
         }
     };
 
+    const bindButtonsEvents = () => {
+        const hideShowDoneTasksElement = document.querySelector(".js-hideShowDoneTasks");
+        if (hideShowDoneTasksElement) {
+            hideShowDoneTasksElement.addEventListener("click", () => {
+                hideDoneTasks = !hideDoneTasks;
+                render();
+            });
+        };
+
+        const allTasksDoneElement = document.querySelector(".js-allTasksDone");
+        if (allTasksDoneElement) {
+            allTasksDoneElement.addEventListener("click", () => {
+                tasks = tasks.map((task) => ({
+                    ...task,
+                    done: true,
+                }));
+                render();
+            });
+        }
+    };
+
     const render = () => {
         renderTasks();
         renderButtons();
 
         bindEvents();
+        bindButtonsEvents();
     };
 
     const onFormSubmit = (event) => {
