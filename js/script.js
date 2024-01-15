@@ -1,5 +1,6 @@
 {
     let tasks = [];
+    let hideDoneTasks = false;
 
     const addNewTask = (newTaskContent) => {
         tasks = [
@@ -60,8 +61,27 @@
         }
         document.querySelector(".js-tasks").innerHTML = htmlString;
     };
+
+    const renderButtons = () => {
+        const buttonsElement = document.querySelector(".js-hideCompleteTasksButtons");
+
+        if (tasks.length > 0) {
+            buttonsElement.innerHTML = `
+            <button>
+                ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
+            </button>
+            <button>
+                Ukończ wszystkie
+            </button>
+            `;
+        } else {
+            buttonsElement.innerHTML = ``;
+        }
+    };
+
     const render = () => {
         renderTasks();
+        renderButtons();
 
         bindEvents();
     };
