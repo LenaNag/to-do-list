@@ -47,7 +47,7 @@
         });
     };
 
-    const render = () => {
+    const renderTasks = () => {
         let htmlString = "";
 
         for (const task of tasks) {
@@ -59,6 +59,9 @@
                 </li>`;
         }
         document.querySelector(".js-tasks").innerHTML = htmlString;
+    };
+    const render = () => {
+        renderTasks();
 
         bindEvents();
     };
