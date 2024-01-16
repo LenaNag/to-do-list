@@ -22,28 +22,31 @@
     };
 
     const toggleTaskDone = (taskIndex) => {
-        tasks = [
-            ...tasks.slice(0, taskIndex),
-            { ...tasks[taskIndex], done: !tasks[taskIndex].done },
-            ...tasks.slice(taskIndex + 1),
-        ];
+        tasks = tasks.map((task, index) => 
+        taskIndex === index ? {...task, done: !task.done} : task
+        );
+        //tasks = [
+        //    ...tasks.slice(0, taskIndex),
+        //    { ...tasks[taskIndex], done: !tasks[taskIndex].done },
+        //    ...tasks.slice(taskIndex + 1),
+        //];
         render();
     };
 
     const bindEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
 
-        removeButtons.forEach((removeButton, index) => {
+        removeButtons.forEach((removeButton, taskIndex) => {
             removeButton.addEventListener("click", () => {
-                removeTask(index);
+                removeTask(taskIndex);
             });
         });
 
         const toggleDoneButtons = document.querySelectorAll(".js-done");
 
-        toggleDoneButtons.forEach((toggleDoneButton, index) => {
+        toggleDoneButtons.forEach((toggleDoneButton, taskIndex) => {
             toggleDoneButton.addEventListener("click", () => {
-                toggleTaskDone(index);
+                toggleTaskDone(taskIndex);
             });
         });
     };
