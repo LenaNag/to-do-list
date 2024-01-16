@@ -7,4 +7,36 @@
 .section__header {
     padding: 0px 15px;
     border-bottom: 1px solid #ddd;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+}
+
+@media (max-width: 767px) {
+    .section__header {
+        grid-template-columns: 1fr;
+    }
+}
+
+.section__buttons {
+    display: flex;
+}
+
+@media (max-width: 767px) {
+    .section__buttons {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+.section__button {
+    background-color: white;
+    color: teal;
+    border: none;
+    margin: 10px;
+    transition: 1s;
+}
+
+.section__button:hover {
+    color: hsl(180, 100%, 35%);
 }

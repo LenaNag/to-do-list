@@ -78,12 +78,12 @@
 
         if (tasks.length > 0) {
             buttonsElement.innerHTML = `
-            <button class="js-hideShowDoneTasks">
-                ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
-            </button>
-            <button class="js-allTasksDone" ${tasks.every(({done}) => done) ? "disabled" : ""}>
-                Ukończ wszystkie
-            </button>
+                <button class="section__button js-hideShowDoneTasks">
+                    ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
+                </button>
+                <button class="section__button js-allTasksDone" ${tasks.every(({done}) => done) ? "disabled" : ""}>
+                    Ukończ wszystkie
+                </button>
             `;
         } else {
             buttonsElement.innerHTML = ``;
