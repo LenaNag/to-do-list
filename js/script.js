@@ -25,11 +25,19 @@
         tasks = tasks.map((task, index) => 
         taskIndex === index ? {...task, done: !task.done} : task
         );
-        //tasks = [
-        //    ...tasks.slice(0, taskIndex),
-        //    { ...tasks[taskIndex], done: !tasks[taskIndex].done },
-        //    ...tasks.slice(taskIndex + 1),
-        //];
+        render();
+    };
+
+    const hideShowDoneTasks = () => {
+        hideDoneTasks = !hideDoneTasks;
+        render();
+    };
+
+    const allTasksDone = () => {
+        tasks = tasks.map((task) => ({
+            ...task,
+            done: true,
+        }));
         render();
     };
 
@@ -85,22 +93,13 @@
     const bindButtonsEvents = () => {
         const hideShowDoneTasksElement = document.querySelector(".js-hideShowDoneTasks");
         if (hideShowDoneTasksElement) {
-            hideShowDoneTasksElement.addEventListener("click", () => {
-                hideDoneTasks = !hideDoneTasks;
-                render();
-            });
+            hideShowDoneTasksElement.addEventListener("click", hideShowDoneTasks);
         };
 
         const allTasksDoneElement = document.querySelector(".js-allTasksDone");
         if (allTasksDoneElement) {
-            allTasksDoneElement.addEventListener("click", () => {
-                tasks = tasks.map((task) => ({
-                    ...task,
-                    done: true,
-                }));
-                render();
-            });
-        }
+            allTasksDoneElement.addEventListener("click", allTasksDone);
+        };
     };
 
     const render = () => {
