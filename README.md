@@ -13,6 +13,8 @@ This aplication was created as a part of [YouCode](https://youcode.pl) course. I
 - BEM methodology;
 - ES6 features;
 - Grid-based layout;
+- Media queries;
+- Immutability;
 - An arrow functions.
 
 ## Demo version:
