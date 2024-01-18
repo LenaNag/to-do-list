@@ -82,7 +82,7 @@
                 <button class="section__button js-hideShowDoneTasks">
                     ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
                 </button>
-                <button class="section__button js-allTasksDone" ${tasks.every(({done}) => done) ? "disabled" : ""}>
+                <button class="section__button js-allTasksDone" ${tasks.every(({ done }) => done) ? "disabled" : ""}>
                     Ukończ wszystkie
                 </button>
             `;
@@ -116,12 +116,10 @@
 
         const newTaskContent = document.querySelector(".js-form__input").value.trim();
 
-        if (newTaskContent === "") {
-            return;
-        }
-
+        if (newTaskContent !== "") {
         addNewTask(newTaskContent);
         document.querySelector(".js-form__input").value = "";
+        }
         document.querySelector(".js-form__input").focus();
     };
 
