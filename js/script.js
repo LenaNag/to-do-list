@@ -23,8 +23,8 @@
     };
 
     const toggleTaskDone = (taskIndex) => {
-        tasks = tasks.map((task, index) => 
-        taskIndex === index ? {...task, done: !task.done} : task
+        tasks = tasks.map((task, index) =>
+            taskIndex === index ? { ...task, done: !task.done } : task
         );
         render();
     };
@@ -76,9 +76,10 @@
 
     const renderButtons = () => {
         const buttonsElement = document.querySelector(".js-hideShowTasksButtons");
+        let buttonsHTMLContent = "";
 
         if (tasks.length > 0) {
-            buttonsElement.innerHTML = `
+            buttonsHTMLContent = `
                 <button class="section__button js-hideShowDoneTasks">
                     ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
                 </button>
@@ -86,9 +87,9 @@
                     Ukończ wszystkie
                 </button>
             `;
-        } else {
-            buttonsElement.innerHTML = ``;
         }
+
+        buttonsElement.innerHTML = buttonsHTMLContent;
     };
 
     const bindButtonsEvents = () => {
@@ -117,8 +118,8 @@
         const newTaskContent = document.querySelector(".js-form__input").value.trim();
 
         if (newTaskContent !== "") {
-        addNewTask(newTaskContent);
-        document.querySelector(".js-form__input").value = "";
+            addNewTask(newTaskContent);
+            document.querySelector(".js-form__input").value = "";
         }
         document.querySelector(".js-form__input").focus();
     };
